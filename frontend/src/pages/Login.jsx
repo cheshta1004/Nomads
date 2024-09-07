@@ -20,7 +20,7 @@ const Login = () => {
     const handleClick = async e => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:5000/login', credentials);
+            const response = await axios.post('https://nomads-backend.onrender.com/login', credentials);
             alert("Login successful");
             navigate('/home')
         } catch (error) {
@@ -28,7 +28,7 @@ const Login = () => {
             alert('Login failed!');
         }
         try {
-            const response = await axios.post('http://localhost:5000/login', credentials);
+            const response = await axios.post('https://nomads-backend.onrender.com/login', credentials);
             const { token } = response.data;
             sessionStorage.setItem('token', token);
             navigate('/home'); 

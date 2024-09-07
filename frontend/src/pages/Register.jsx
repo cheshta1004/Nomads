@@ -32,7 +32,7 @@ const Register = () => {
         }
         setEmailError('');
         try {
-            const response = await axios.post('http://localhost:5000/register', credentials);
+            const response = await axios.post('https://nomads-backend.onrender.com/register', credentials);
             alert("Registration successful");
             navigate("/login");
         } catch (error) {
@@ -95,7 +95,7 @@ export default Register;
 //     const handleClick = async e => {
 //         e.preventDefault();
 //         try {
-//             const response = await axios.post('http://localhost:5000/register', credentials);
+//             const response = await axios.post('https://nomads-backend.onrender.com/register', credentials);
 //             alert("Registration successful");
 //             navigate("/login");
 //         } catch (error) {

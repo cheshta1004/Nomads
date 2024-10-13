@@ -7,11 +7,7 @@ import missionImage from '../assets/images/gallery-03.jpg'; // Import an image f
 const About = () => {
     return (
         <div className="about-container">
-            <div className="about-header">
-                <h1>About Us</h1>
-                <p>Your Trusted Travel Partner</p>
-            </div>
-
+            
             <div className="about-section">
                 <img src={aboutImage} alt="About Us" className="about-image"/>
                 <div className="about-text">

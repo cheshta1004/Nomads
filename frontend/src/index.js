@@ -6,6 +6,8 @@ import "remixicon/fonts/remixicon.css";
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 import {BrowserRouter} from "react-router-dom";
+import { AuthContextProvider } from './context/AuthContext';
+import { UserProvider } from './context/userContext';
 
 const rootElement = document.getElementById('root');
 const root = ReactDOM.createRoot(rootElement);
@@ -13,8 +15,12 @@ const root = ReactDOM.createRoot(rootElement);
 
 root.render(
   <React.StrictMode>
+    <AuthContextProvider>
+    <UserProvider>
     <BrowserRouter>
     <App />
     </BrowserRouter>
+    </UserProvider>
+    </AuthContextProvider>
   </React.StrictMode>
 );

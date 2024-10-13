@@ -16,7 +16,7 @@
     margin-bottom: 20px;
     color: #2c3e50;
     background: linear-gradient(90deg, #1e90ff, #ff7f50);
-    /* -webkit-background-clip: text; */
+    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-family: 'Montserrat', sans-serif;
     letter-spacing: 2px;
@@ -26,7 +26,6 @@
 
 .about-header p {
     font-size: 20px;
-   
     font-style: italic;
 }
 
@@ -45,31 +44,28 @@
 
 .about-image {
     width: 48%;
-    height:350px;
+    height: 350px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     object-fit: cover;
-    transform: scale(1); /* Removed hover scale effect */
-    opacity: 1; /* Set to full opacity */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .about-text {
     width: 48%;
     padding: 0 20px;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 1s ease forwards;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
-@keyframes fadeInUp {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
+/* Hover Effects */
+.about-section:hover .about-image {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.about-section:hover .about-text {
+    transform: translateY(-10px);
+    opacity: 1;
 }
 
 .about-text h2 {
@@ -81,13 +77,11 @@
 .about-text p, .about-text ul li {
     font-size: 18px;
     line-height: 1.6;
-   
 }
 
 .about-text ul {
     list-style-type: disc;
     margin-left: 20px;
-   
 }
 
 .about-text ul li {
@@ -107,7 +101,6 @@
 
 .about-contact p {
     font-size: 18px;
-    
 }
 
 .about-contact a {

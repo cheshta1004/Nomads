@@ -21,7 +21,7 @@ const Login = () => {
     const handleClick = async e => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:5000/login', credentials);
+            const response = await axios.post('https://nomads-backend.onrender.com/login', credentials);
             const { token,user } = response.data; // Get the user object containing username
             sessionStorage.setItem('token', response.data.token); // Store token if needed
             sessionStorage.setItem('username', user.username);
@@ -33,7 +33,7 @@ const Login = () => {
             alert('Login failed!');
         }
         try {
-            const response = await axios.post('http://localhost:5000/login', credentials);
+            const response = await axios.post('https://nomads-backend.onrender.com/login', credentials);
             const { token } = response.data;
             sessionStorage.setItem('token', token);
             navigate('/home'); 

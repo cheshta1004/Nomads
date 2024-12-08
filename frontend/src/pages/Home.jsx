@@ -1,30 +1,24 @@
-
 import React from "react";
 import "../styles/home.css";
 import {Container,Row,Col}from 'reactstrap'
-import heroImg from"../assets/images/hero-img01.jpg"
-import heroImg02 from"../assets/images/hero-img02.jpg"
 import heroVideo from "../assets/images/heroVideo.mp4"
-import WorldImg from "../assets/images/world.png"
 import experienceImg from "../assets/images/experience.png"
 import Subtitle from "./../shared/Subtitle";
 import SearchBar from "../shared/SearchBar";
 import ServiceList from "../services/ServiceList";
-import FeaturedTourList from "../components/Featured-tours/FeaturedTourList";
 import Collage from "../components/Image-gallery/Collage.jsx";
 import Testimonial from "../components/Testimonial/Testimonial.jsx";
 import Newsletter from "../shared/Newsletter.jsx";
-import { Button} from 'reactstrap'
+import FeaturedDestinationList from "../components/Featured-Destination/FeaturesDestination.jsx";
+
 const Home =()=>{
-  
     return <>
     <section>
         <Container>
             <Row>
             <div className="Home">
             <div className="videoBg">
-             <video src={heroVideo} autoPlay loop muted alt="" controls></video>
-          
+             <video src={heroVideo} autoPlay loop muted alt="" controls={false}></video>
             </div>
             <div className="popularPlaces">
                 <div className="conten"></div>
@@ -57,7 +51,7 @@ const Home =()=>{
                         Our Featured Tours
                     </h2>
                 </Col>
-                <FeaturedTourList/>
+                <FeaturedDestinationList/>
             </Row>
         </Container>
     </section>

@@ -7,7 +7,10 @@ import {useUserContext} from "../../context/userContext"
 const nav__links = [
     { path: '/home', display: "Home" },
     { path: '/about', display: "About" },
-    { path: '/tours', display: "Tours" },
+    { path: '/destinations', display: "Destinations" }, 
+    {path:'/placesList',display:"Places List"},
+    {path:'/DashBoard',display:"Dash Board"},
+    {path:'/Contact', display:"Contact Us"}
 ];
 
 const Header = () => {
@@ -61,7 +64,8 @@ const Header = () => {
                         <div className="nav__right d-flex align-items-center gp-4">
                             {username ? (
                                 <div className="username-display">
-                                    <span>{username}</span>
+                                    <span>{username.username}</span>
+                                
                                     <Button className="btn primary__btn" onClick={handleLogout}>Logout</Button>
                                 </div>
                             ) : (

@@ -85,8 +85,6 @@
     color: #fff;
 }
 
-
-
 .secondary__btn {
     background-color: #343a40; /* Dark background */
     color: #fff; /* White text */
@@ -94,24 +92,63 @@
 
 .secondary__btn:hover {
     background-color: #495057; /* Slightly lighter on hover */
-    color: #fff;
 }
 
+/* Responsive Styles */
+.hamburger {
+    display: none; /* Hide hamburger by default */
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
 
 @media (max-width: 768px) {
     .nav__wrapper {
-        flex-direction: column;
+        flex-direction: column; /* Stack elements vertically */
+        align-items: flex-start; /* Align items to the left */
     }
 
     .navigation {
-        margin: 20px 0;
+        display: none; /* Hide navigation by default */
+        flex-direction: column; /* Stack menu items */
+        width: 100%; /* Full width on mobile */
+        padding: 10px 0; /* Add some padding */
+    }
+
+    .navigation.open {
+        display: flex; /* Show navigation when menu is open */
+    }
+
+    .hamburger {
+        display: block; /* Show hamburger button on mobile */
+        margin-left: auto; /* Align to the right */
     }
 
     .menu {
-        flex-direction: column;
+        flex-direction: column; /* Stack menu items vertically */
+        gap: 10px; /* Space between menu items */
+    }
+}
+
+@media (max-width: 576px) {
+    .logo img {
+        height: 35px; /* Adjust logo size for small screens */
     }
 
-    .nav__right {
-        margin-top: 10px;
+    .nav__item {
+        margin-right: 0; /* Remove horizontal margin on small screens */
+    }
+
+    .nav__item a {
+        font-size: 13px; /* Smaller text on small screens */
+        width: 100%; /* Full width for nav items */
+        padding: 10px; /* Add padding for better touch target */
+        text-align: center; /* Center align text */
+    }
+
+    .btn {
+        padding: 6px 15px; /* Smaller button padding */
+        font-size: 12px; /* Smaller button text */
     }
 }

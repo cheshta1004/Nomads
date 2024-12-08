@@ -1,4 +1,4 @@
-import tourImg01 from "../images/tour-img01.jpg";
+import tourImg01 from "../images/Kashmir.jpg";
 import tourImg02 from "../images/tour-img02.jpg";
 import tourImg03 from "../images/tour-img03.jpg";
 import tourImg04 from "../images/tour-img04.jpg";

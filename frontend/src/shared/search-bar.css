@@ -1,4 +1,74 @@
-.search__bar{
+destinations-title {
+    font-size: 2rem;
+    margin: 40px 0;
+    color: #333;
+    padding: 40px 0 0 0;
+}
+
+.destinations-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;  /* Adds spacing between cards */
+}
+
+.destination-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    width: 100%;  /* Takes up 100% of the available space in the grid column */
+    max-width: 300px;  /* Limits the card width */
+    margin-bottom: 20px;  /* Adds spacing between cards */
+    padding: 20px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.destination-card:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.destination-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.destination-card h3 {
+    font-size: 1.5rem;
+    margin-top: 15px;
+    color: #333;
+}
+
+.destination-card p {
+    font-size: 1rem;
+    color: #666;
+    margin: 10px 0;
+}
+
+.book-now-btn .btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.book-now-btn .btn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+@media (max-width: 768px) {
+    .destination-card {
+        width: 100%;
+        max-width: 100%;
+    }
+}  this is css of destination card .search__bar{
     padding:0.5rem 1rem;
     border-radius:50px;
     box-shadow:rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
@@ -31,4 +101,37 @@
     color: #fff;
     border-radius: 10px 5px 10px 5px;
     cursor: pointer;
+} 
+/* .search__bar {
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    border: 2px solid #ddd; 
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    margin: 20px auto; 
+} */
+.search__bar {
+    border-radius: 50px;
+    border: 2px solid #ddd; /* Add border to the search bar */
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    margin: 20px 20px 20px 20px; /* Center on smaller screens */
+    padding-top: 1.5rem;
+    padding-left: 5.5rem; /* Shift content slightly to the right */
+    
+}
+
+/* Adjustments for tablets */
+@media (max-width: 768px) {
+    .search__bar {
+        padding: 0.5rem;
+        width: 90%; /* Expand to fit more of the screen width */
+    }
+}
+
+/* Adjustments for mobile */
+@media (max-width: 576px) {
+    .search__bar {
+        padding: 0.5rem;
+        width: 100%; /* Take full width of the screen */
+        border-radius: 25px; /* Slightly smaller border radius for smaller screens */
+    }
 }

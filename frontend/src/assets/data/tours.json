@@ -9,8 +9,8 @@
     "desc": "this is the description",
     "reviews": [],
 
-    "photo": "/tour-images/tour-img01.jpg",
-    "featured": true
+    "photo": "/tour-images/Kashmir.jpg",
+    "featured": false
   },
   {
     "title": "Bali, Indonesia",
@@ -23,7 +23,7 @@
     "reviews": [],
 
     "photo": "/tour-images/tour-img02.jpg",
-    "featured": true
+    "featured": false
   },
   {
     "title": "Snowy Mountains, Thailand",
@@ -114,7 +114,7 @@
     "reviews": [],
 
     "photo": "/tour-images/tour-img08.jpg",
-    "featured": false
+    "featured": true
   },
   {
     "title": "Cox's Bazar Sea Beach",
@@ -127,6 +127,6 @@
     "reviews": [],
 
     "photo": "/tour-images/tour-img09.jpg",
-    "featured": false
+    "featured": true
   }
 ]

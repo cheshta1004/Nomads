@@ -1,0 +1,327 @@
+.contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #1422e3; /* Background color */
+}
+
+.contact__form {
+    max-width: 400px;
+    width: 100%;
+    background: #fff; /* Form background color */
+    padding: 25px 25px 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: #333;
+    margin: 25px;
+}
+
+.contact__form h2 {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.contact__form .input-box1 {
+    margin-top: 20px;
+}
+
+.input-box1 label {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.input-box1 .field {
+    width: 100%; /* Fix input width to be full width of container */
+    height: 50px;
+    background: transparent;
+    border: 2px solid #ccc; /* Light gray border for inputs */
+    outline: none;
+    border-radius: 6px;
+    padding: 0 15px;
+    font-size: 16px;
+    color: #333;
+    margin-top: 8px;
+    transition: border 0.3s ease;
+}
+
+.input-box1 .field:focus {
+    border-color: #d06f0e; /* Focused state color */
+}
+
+.input-box1 .field.mess {
+    height: 200px;
+    resize: none;
+}
+
+.contact__form button {
+    width: 100%;
+    height: 55px;
+    background: #2a27cb; /* Button background color */
+    border: none;
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(13, 177, 79, 0.1);
+    cursor: pointer;
+    font-size: 16px;
+    color: white;
+    font-weight: 500;
+    margin-top: 25px;
+    transition: background-color 0.3s ease;
+}
+
+.contact__form button:hover {
+    background-color: #1239c4; /* Darker shade of purple on hover */
+}
+
+.contact__form button:active {
+    background-color: #2a1ce6; /* Even darker shade on click */
+}
+.contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url('https://blogearns.com/wp-content/uploads/2021/06/contact-us-page-generator.jpg');
+    background-size: cover; 
+    /* Ensures the image covers the entire background */ 
+    background-position: center; /* Centers the image */ 
+    background-repeat: no-repeat; /* Background color */
+}
+
+.contact__form {
+    max-width: 600px;
+    width: 100%;
+    background: #fff; /* Form background color */
+    padding: 25px 25px 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(199, 14, 14, 0.1);
+    color: #333;
+    margin: 25px;
+}
+
+.contact__form h2 {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.contact__form .input-box1 {
+    margin-top: 20px;
+}
+
+.input-box1 label {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.input-box1 .field {
+    width: 100%; /* Fix input width to be full width of container */
+    height: 50px;
+    background: transparent;
+    border: 2px solid #ccc; /* Light gray border for inputs */
+    outline: none;
+    border-radius: 6px;
+    padding: 0 15px;
+    font-size: 16px;
+    color: #333;
+    margin-top: 8px;
+    transition: border 0.3s ease;
+}
+
+.input-box1 .field:focus {
+    border-color: #02071e; /* Focused state color */
+}
+
+.input-box1 .field.mess {
+    height: 200px;
+    resize: none;
+}
+
+.contact__form button {
+    width: 100%;
+    height: 55px;
+    background: #024D95; /* Button background color */
+    border: none;
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    font-size: 16px;
+    color: white;
+    font-weight: 500;
+    margin-top: 25px;
+    transition: background-color 0.3s ease;
+}
+
+.contact__form button:hover {
+    background-color: #0077B6; /* Darker shade of purple on hover */
+}
+
+.contact__form button:active {
+    background-color: #1850c1; /* Even darker shade on click */
+}
+/* .contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #1422e3; 
+}
+
+form {
+    max-width: 400px;
+    width: 100%;
+    background: #fff; 
+    padding: 25px 25px 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: #333;
+    margin: 25px;
+}
+
+form h2 {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+form .input-box1 {
+    margin-top: 20px;
+}
+
+.input-box1 label {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.input-box1 .field {
+    width: 100%; 
+    height: 50px;
+    background: transparent;
+    border: 2px solid #ccc; 
+    outline: none;
+    border-radius: 6px;
+    padding: 0 15px;
+    font-size: 16px;
+    color: #333;
+    margin-top: 8px;
+    transition: border 0.3s ease;
+}
+
+.input-box1 .field:focus {
+    border-color: #d06f0e; 
+}
+
+.input-box1 .field.mess {
+    height: 200px;
+    resize: none;
+}
+
+form button {
+    width: 100%;
+    height: 55px;
+    background: #2a27cb; 
+    border: none;
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(13, 177, 79, 0.1);
+    cursor: pointer;
+    font-size: 16px;
+    color: white;
+    font-weight: 500;
+    margin-top: 25px;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #1239c4; 
+}
+
+form button:active {
+    background-color: #2a1ce6;
+}
+.contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url('https://blogearns.com/wp-content/uploads/2021/06/contact-us-page-generator.jpg');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+}
+
+form {
+    max-width: 600px;
+    width: 100%;
+    background: #fff; 
+    padding: 25px 25px 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(199, 14, 14, 0.1);
+    color: #333;
+    margin: 25px;
+}
+
+form h2 {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+form .input-box1 {
+    margin-top: 20px;
+}
+
+.input-box1 label {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.input-box1 .field {
+    width: 100%; 
+    height: 50px;
+    background: transparent;
+    border: 2px solid #ccc; 
+    outline: none;
+    border-radius: 6px;
+    padding: 0 15px;
+    font-size: 16px;
+    color: #333;
+    margin-top: 8px;
+    transition: border 0.3s ease;
+}
+
+.input-box1 .field:focus {
+    border-color: #02071e; 
+}
+
+.input-box1 .field.mess {
+    height: 200px;
+    resize: none;
+}
+
+form button {
+    width: 100%;
+    height: 55px;
+    background: #024D95; 
+    border: none;
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    font-size: 16px;
+    color: white;
+    font-weight: 500;
+    margin-top: 25px;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #0077B6; 
+}
+
+form button:active {
+    background-color: #1850c1; 
+} */

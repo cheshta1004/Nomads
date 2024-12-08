@@ -1,71 +1,277 @@
-.booking{
-    padding:2rem;
-    border-radius:.5rem;
-    border:1px solid rgb(229,231,235);
-    position:sticky;
-    top:80px;
-
-}
-.booking_top h3{
-    font-size: 2rem;
-    font-weight: 700;
-}
-.booking__top h3 span{
-    font-size:1.1rem;
-    font-weight: 700;
-    color:var(--text-color);
-
-}
-.booking__top span{
-font-size: 1.1rem;
-font-weight: 600;
-color:var(--text-color);
-
-}
-.booking_top span i{
-    color:var(--secondary-color);
-
-}
-.booking__top{
-    padding-bottom: 2rem;
-    border-bottom: 1px solid rgb(229,231,235);
-}
-.booking__form{
-    padding-top: 2rem;
-
-}
-.booking_form h5{
-    margin-bottom: 1rem;
-}
-.booking__form input{
-    width: 100%;
-    padding: 0.5rem;
-    border-radius: .5rem;
-    color:var(----heading-color);
-    font-size: 1 rem;
-    border: none;
-    border-bottom: 1px solid rgb(229,231,235);
-}
-.booking__form input:focus{
-    outline:none;
-}
-.booking__info-form{
-    padding: 1rem;
-    border:1px solid rgb(229,231,235);
-
-}
-.booking__bottom li h5,.booking__bottom li span{
+.booking {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 1000px; /* Reduced max-width for a more compact layout */
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .booking:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .hotel-details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+    border-bottom: 2px solid #f1f1f1;
+    transition: background-color 0.3s ease;
+  }
+  
+  .hotel-details:hover {
+    background-color: #f7f7f7;
+  }
+  
+  .hotel-image {
+    width: 300px;  /* Larger image */
+    height: 200px;  /* Adjust height to keep aspect ratio */
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+  }
+  
+  .hotel-details:hover .hotel-image {
+    transform: scale(1.05);
+  }
+  
+  .hotel-details h4 {
+    font-size: 1.3rem;  /* Slightly smaller header */
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .hotel-details p {
     font-size: 1rem;
-    color:var(--text-color);
+    color: #666;
+  }
+  
+  .booking__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;  /* Reduced padding */
+  }
+  
+  .booking__top h3 {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .booking__top h3 span {
+    font-size: 1rem;
+    color: #666;
+  }
+  
+  .booking__top:hover h3 {
+    color: #0056b3;
+  }
+  
+  .booking__form {
+    padding: 10px 15px;  /* More compact padding */
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;  /* Reduced bottom margin */
+  }
+  
+  .booking__info-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;  /* Reduced gap between inputs */
+  }
+  
+  .booking__info-form input {
+    padding: 8px;  /* Smaller padding */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 0.9rem;  /* Smaller text size */
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .booking__info-form input:focus {
+    outline: none;
+    border-color: #0056b3;
+    transform: scale(1.05);
+  }
+  
+  .booking__info-form input:focus::placeholder {
+    color: #0056b3;
+  }
+  
+  .booking__bottom {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    transition: background-color 0.3s ease;
+  }
+  
+  .booking__bottom:hover {
+    background-color: #fafafa;
+  }
+  
+  .booking__bottom h5 {
+    font-size: 1rem;
     font-weight: 500;
+    margin: 10px 0;
+  }
+  
+  .booking__bottom .total {
+    font-size: 1.1rem;
+    font-weight: bold;
+  }
+  
+  .booking__bottom .total span {
+    font-size: 1.3rem;
+    color: #ff6600;
+  }
+  
+  .booking__bottom .btn-primary {
+    background-color: #0056b3;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .booking__bottom .btn-primary:hover {
+    background-color: #004494;
+    transform: scale(1.05);
+  }
+  
+  .booking__bottom .btn-primary:active {
+    background-color: #003c7f;
+    transform: scale(1);
+  }
+  
+  .booking__form h5 {
+    font-size: 1.1rem;
+    margin-bottom: 12px;  /* Slightly smaller spacing */
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .booking__info-form label {
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  .booking__form input[type="date"],
+  .booking__form input[type="number"] {
+    padding: 8px;  /* Smaller padding */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 45%;  /* Adjust width for side-by-side inputs */
+    transition: border-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .booking__form input[type="date"]:focus,
+  .booking__form input[type="number"]:focus {
+    border-color: #0056b3;
+    transform: scale(1.05);
+  }
+  
+  .booking__form .d-flex {
+    display: flex;
+    gap: 10px;  /* Reduced gap between the date and number fields */
+  }
+  
+  .booking__bottom .total span,
+  .booking__top h3 {
+    transition: transform 0.3s ease;
+  }
+  
+  .booking__bottom .total span:hover {
+    transform: scale(1.1);
+  }
+  
+  .booking__top h3:hover {
+    color: #0056b3;
+  }
+  
+  .booking__info-form input[type="number"],
+  .booking__info-form input[type="date"] {
+    width: 45%; /* Align the form inputs side by side */
+  }
+  
+  .booking__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+  }
+  
+  .booking__bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .booking__bottom .btn-primary {
+    margin-top: 20px;
+  }
+  /* General styling for FormGroup */
+.booking__form .form-group {
+  margin-bottom: 1.5rem;
 }
-.booking__bottom{
-    margin-top: 1rem;
-}
-.total h5,
-.total span{
-    color:var(--heading-color);
-    font-weight: 700 !important;
-    font-size: 1.1rem !important;
 
+/* Label styling */
+.booking__form label {
+  display: block;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+/* Input and Select fields styling */
+.booking__form input,
+.booking__form select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.booking__form input:focus,
+.booking__form select:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  outline: none;
+}
+
+/* Styling for gap between inputs in d-flex layout */
+.booking__form .d-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.booking__form .d-flex div {
+  flex: 1;
+  min-width: 150px; /* Ensures proper width for smaller screens */
+}
+
+/* Optional: Add hover effect for inputs */
+.booking__form input:hover,
+.booking__form select:hover {
+  border-color: #ccc;
 }

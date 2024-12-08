@@ -1,0 +1,88 @@
+/* DashboardDetails Styles */
+
+.booking-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  transition: transform 0.3s, box-shadow 0.3s;
+  overflow: hidden;
+  margin: 0 auto; /* Center the card if displayed as standalone */
+  width: fit-content; /* Card width adjusts to content */
+}
+
+.booking-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.booking-card .card-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.booking-card h5 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 15px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.booking-card strong {
+  color: #555;
+  font-weight: 500;
+}
+
+.booking-card .card-text {
+  font-size: 0.95rem;
+  color: #666;
+  margin: 0; /* Remove default margin to tighten text spacing */
+}
+
+.booking-card .card-text strong {
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Add spacing between cards if multiple cards are displayed in a container */
+.cards-container .booking-card {
+  margin: 10px auto; /* Center cards in the container */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .booking-card {
+    border-radius: 8px;
+  }
+
+  .booking-card .card-body {
+    padding: 15px;
+  }
+
+  .booking-card h5 {
+    font-size: 1.3rem;
+  }
+
+  .booking-card .card-text {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .booking-card {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .booking-card h5 {
+    font-size: 1.2rem;
+  }
+
+  .booking-card .card-text {
+    font-size: 0.85rem;
+  }
+}

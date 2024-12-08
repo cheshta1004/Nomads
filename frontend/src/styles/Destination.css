@@ -1,0 +1,38 @@
+.destinations-title {
+    font-size: 3rem; /* Larger text size for prominence */
+    font-weight: 700; /* Bold font weight */
+    color: #34495e; /* Dark grayish color for the text */
+    text-align: center; /* Center the text horizontally */
+    margin-top: 40px; /* Add space above the title */
+    margin-bottom: 20px; /* Add space below the title */
+    text-transform: uppercase; /* Make the text uppercase for emphasis */
+    letter-spacing: 2px; /* Add space between letters */
+    font-family: 'Arial', sans-serif; /* Use a clean and modern font */
+  }
+  
+  .text-center {
+    display: block; /* Ensure text is centered */
+    margin-left: auto; /* Center the element horizontally */
+    margin-right: auto; /* Center the element horizontally */
+  }
+  
+.destinations-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  /* Vertically center the content */
+    align-items: center;  /* Horizontally center the content */
+    min-height: 100vh;  /* Ensure the content takes up at least the full viewport height */
+    padding: 120px 0 60px;  /* Adjust padding based on your header size */
+    background-color: #f7f7f7;
+    color: #333;
+}
+
+.destinations-page h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.destinations-page p {
+    font-size: 1.2rem;
+    color: #666;
+}

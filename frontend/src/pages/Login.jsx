@@ -21,26 +21,18 @@ const Login = () => {
     const handleClick = async e => {
         e.preventDefault();
         try {
-            const response = await axios.post('https://nomads-backend.onrender.com/login', credentials);
+            const response = await axios.post('http://localhost:5000/login', credentials);
             const { token,user } = response.data; // Get the user object containing username
             sessionStorage.setItem('token', response.data.token); // Store token if needed
-            sessionStorage.setItem('username', user.username);
-            setUsername(user.username); 
+            sessionStorage.setItem('username', user);
+            setUsername(user); 
             alert("Login successful");
             navigate('/home')
         } catch (error) {
             console.error('There was an error logging in!', error);
             alert('Login failed!');
         }
-        try {
-            const response = await axios.post('https://nomads-backend.onrender.com/login', credentials);
-            const { token } = response.data;
-            sessionStorage.setItem('token', token);
-            navigate('/home'); 
-        } catch (error) {
-            console.error('Login failed:', error);
-            alert('Login failed! Please check your credentials.');
-        }
+        
     };
 
     return (

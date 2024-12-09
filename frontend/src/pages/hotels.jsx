@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useLocation } from 'react-router-dom';
 import "../styles/hotels.css";
 import Booking from '../components/Booking/Booking';
-
+import Weather from '../components/Weather/weather';
 const Hotels = () => {
     const [hotels, setHotels] = useState([]);
     const [selectedHotel, setSelectedHotel] = useState(null); // State to track selected hotel
@@ -32,13 +32,13 @@ const Hotels = () => {
     }
 
     const handleBookNow = (hotel) => {
-        setSelectedHotel(hotel); // Set the selected hotel when the "Book Now" button is clicked
+        setSelectedHotel(hotel); 
     };
 
     return (
         <div>
             <h1 className="hotels-title">Hotels in {city}</h1>
-
+            <Weather city={city}/>
             {selectedHotel ? (
                 // If a hotel is selected, show the Booking component
                 <Booking hotel={selectedHotel} />

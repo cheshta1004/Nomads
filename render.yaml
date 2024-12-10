@@ -3,7 +3,7 @@ services:
     name: backend
     env: node
     buildCommand: "cd backend && npm install"        # Install dependencies inside the backend folder
-    startCommand: "cd backend && npm start"          # Run the start command inside the backend folder
+    startCommand: "cd backend && node index.js"          # Run the start command inside the backend folder
     plan: free
     envVars:
       - key: NODE_ENV

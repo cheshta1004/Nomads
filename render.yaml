@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: backend
+    env: node
+    buildCommand: "npm install"
+    startCommand: "npm start"
+    plan: free
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: REACT_APP_API_URL
+        value: https://your-backend.onrender.com

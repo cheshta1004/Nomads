@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { API_URL } from '../config';
 import { useLocation } from 'react-router-dom';
 import "../styles/hotels.css";
 import Booking from '../components/Booking/Booking';
@@ -16,7 +17,7 @@ const Hotels = () => {
 
             try {
                 console.log(`Fetching hotels for city: ${city}`);
-                const response = await axios.get(`http://localhost:5000/api/hotels?city=${city}`);
+                const response = await axios.get(`${API_URL}/api/hotels?city=${city}`);
                 console.log('Fetched hotels:', response.data);
                 setHotels(response.data);
             } catch (error) {

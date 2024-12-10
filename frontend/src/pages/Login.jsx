@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Container, Row, Col, Form, FormGroup, Button } from 'reactstrap';
 import axios from 'axios';
+import { API_URL } from '../config';
 import "./login.css"
 import LoginPhoto from "../assets/images/Login.jpg"
 import LoginTitle from "../assets/images/login-title.png"
@@ -21,8 +22,9 @@ const Login = () => {
     const handleClick = async e => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:5000/login', credentials);
+            const response = await axios.post(`${API_URL}/login`, credentials);
             const { token,user } = response.data; // Get the user object containing username
+            console.log(token);
             sessionStorage.setItem('token', response.data.token); // Store token if needed
             sessionStorage.setItem('username', user);
             setUsername(user); 

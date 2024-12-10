@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import "./search-bar.css";
 import { Col, Form, FormGroup, Row } from "reactstrap";
 import DestinationCard from "../shared/DestinationCard.jsx";
-
+import { API_URL } from '../config';
 const SearchBar = () => {
     const locationRef = useRef('');
     const [results, setResults] = useState([]); 
@@ -27,7 +27,7 @@ const SearchBar = () => {
             setSearchInitiated(true); 
             setLoading(true);
             setError(null);
-            const res = await fetch(`http://localhost:5000/api/destinations/search?city=${location}`);
+            const res = await fetch(`${API_URL}/api/destinations/search?city=${location}`);
             if (!res.ok) throw new Error('Failed to fetch destinations');
             const result = await res.json();
             setResults(result.data); 

@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { Card, CardBody, CardTitle, CardText } from "reactstrap";
 import "../DashComp/DashBoardTour.css";
-
+import { API_URL } from '../../config.js';
 const DashboardCafe = ({ booking }) => {
   const [cafeName, setCafeName] = useState("");
   
   const fetchName = async (cafeId) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/CafeAdv/${cafeId}`);
+      const response = await fetch(`${API_URL}/api/CafeAdv/${cafeId}`);
       
       if (!response.ok) {
         

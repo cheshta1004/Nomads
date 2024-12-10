@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/PlacesList.css';
 import axios from 'axios';
+import { API_URL } from '../config';
 import { useNavigate } from 'react-router-dom';
 
 const PlacesList = () => {
@@ -15,7 +16,7 @@ const PlacesList = () => {
       setLoading(true);
       setError(null);
       try {
-        const response = await axios.get('http://localhost:5000/api/CafeAdv');
+        const response = await axios.get(`${API_URL}/api/CafeAdv`);
         setCafeAdv(response.data.CafeAdv);
       } catch (error) {
         setError('Failed to load data. Please try again later.');

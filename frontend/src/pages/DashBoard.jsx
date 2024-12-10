@@ -5,7 +5,7 @@ import { Spinner } from "reactstrap";
 import DashboardDetails from "../components/DashComp/DashBoardTour";
 import DashboardCafe from "../components/DashComp/DashBoardCafe";
 import "../styles/DashBoard.css"
-
+import { API_URL } from '../config';
 const Dashboard = () => {
   const { username } = useUserContext();
   const [bookings, setBookings] = useState([]);
@@ -20,7 +20,7 @@ const Dashboard = () => {
     }
     const fetchCafeBookings = async () => {
       try {
-        const res = await fetch(`http://localhost:5000/api/paymentCafeAdv/${username._id}`);
+        const res = await fetch(`${API_URL}/api/paymentCafeAdv/${username._id}`);
         if (res.ok) {
           const data = await res.json();
           console.log(data.userRecord);
@@ -38,7 +38,7 @@ const Dashboard = () => {
 
     const fetchBookings = async () => {
       try {
-        const res = await fetch(`http://localhost:5000/api/payment/${username._id}`);
+        const res = await fetch(`${API_URL}/api/payment/${username._id}`);
         if (res.ok) {
           const data = await res.json();
           console.log(data.userRecord);

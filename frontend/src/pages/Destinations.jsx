@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { API_URL } from '../config';
 import DestinationCard from "../shared/DestinationCard";
 import { Container, Row, Col } from 'reactstrap';  
 import '../styles/Destination.css';
@@ -13,7 +14,7 @@ const Destinations = () => {
             setLoading(true);
             setError(null);
             try {
-                const response = await axios.get('http://localhost:5000/api/destinations');
+                const response = await axios.get(`${API_URL}/api/destinations`);
                 setDestinations(response.data.destinations);
             } catch (err) {
                 console.error("Error fetching destinations:", err);
@@ -35,7 +36,7 @@ const Destinations = () => {
 
     return (
         <Container>
-            <h1 className="destinations-title text-center"></h1>
+            <h1 className="destinations-title text-center">.</h1>
             <SearchBar/>
             <Row>
                 {destinations.length > 0 ? (

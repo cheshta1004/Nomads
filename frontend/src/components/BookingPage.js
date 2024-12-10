@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import '../styles/BookingPage.css';
 import { useUserContext } from "../context/userContext";
 import { Button } from "reactstrap";
-
+import { API_URL } from '../config';
 const BookingPage = () => {
   const location = useLocation();
   const navigate = useNavigate();
@@ -61,7 +61,7 @@ const BookingPage = () => {
             },
           };
 
-          const res = await fetch("http://localhost:5000/api/paymentCafeAdv", {
+          const res = await fetch(`${API_URL}/api/paymentCafeAdv`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(paymentDetails),

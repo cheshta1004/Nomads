@@ -1,12 +1,13 @@
 import React,{useState,useEffect} from "react";
 import { Card, CardBody, CardTitle, CardText } from "reactstrap";
 import "../DashComp/DashBoardTour.css";
+import { API_URL } from '../../config';
 const DashboardDetails = ({ booking }) => {
   const [hotelName, setHotelName] = useState("");
   
   const fetchName = async (hotelId) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/hotels/${hotelId}`);
+      const response = await fetch(`${API_URL}/api/hotels/${hotelId}`);
       if (!response.ok) {
         setHotelName("Hotels"); // Default value in case of an error
         return;

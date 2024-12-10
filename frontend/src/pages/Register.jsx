@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Container, Row, Col, Form, FormGroup, Button } from 'reactstrap';
 import axios from 'axios';
+import { API_URL } from '../config';
 import "./login.css"
 import RegisterPhoto from "../assets/images/register.jpg"
 import RegisterTitle from "../assets/images/registerTitle.png"
@@ -35,7 +36,7 @@ const Register = () => {
         }
         setEmailError('');
         try {
-            const response = await axios.post('http://localhost:5000/register', credentials);
+            const response = await axios.post(`${API_URL}/register`, credentials);
             console.log(response);
             alert("Registration successful");
             navigate("/login");

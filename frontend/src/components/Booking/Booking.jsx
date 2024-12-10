@@ -4,10 +4,11 @@ import "./booking.css";
 import { Form, FormGroup, ListGroup, ListGroupItem, Button } from "reactstrap";
 import { useNavigate } from "react-router-dom";
 import { useUserContext } from "../../context/userContext.js";
+import { API_URL } from '../../config';
 const Booking = ({ hotel }) => {
   const { name, city, address, price, image, propertyClass } = hotel; // `price` is now per day
   const navigate = useNavigate();
-  const { username, setUsername } = useUserContext();
+  const { username } = useUserContext();
   const [credentials, setCredentials] = useState({
     userId: username?._id || "",
     userEmail: username?.email || "",
@@ -107,6 +108,7 @@ const Booking = ({ hotel }) => {
     }
   }, [credentials.bookOn, credentials.bookTill]);
   const isCalculating = travelFare === 0 || !credentials.pickupLocation;
+  console.log(isCalculating);
 
   useEffect(() => {
     const fetchFare = async () => {
@@ -129,6 +131,7 @@ const Booking = ({ hotel }) => {
     };
   
     fetchFare();
+    //eslint-disable-next-line
   }, [credentials.pickupLocation, credentials.transportMode, credentials.guestSize]);
   
   
@@ -162,7 +165,7 @@ const Booking = ({ hotel }) => {
           },
         };
         console.log("Payment Details Sent to API:", paymentDetails);
-        const res = await fetch("http://localhost:5000/api/payment", {
+        const res = await fetch(`${API_URL}/api/payment`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

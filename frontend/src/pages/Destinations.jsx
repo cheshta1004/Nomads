@@ -36,7 +36,7 @@ const Destinations = () => {
 
     return (
         <Container>
-            <h1 className="destinations-title text-center">.</h1>
+            <h1 className="destinations-title text-center"></h1>
             <SearchBar/>
             <Row>
                 {destinations.length > 0 ? (

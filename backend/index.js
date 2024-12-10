@@ -127,7 +127,7 @@ app.post('/api/paymentCafeAdv', async (req, res) => {
 
 
 
-mongoose.connect("mongodb://127.0.0.1:27017/signupDB" ).then(() => console.log('MongoDB connected'))
+mongoose.connect("mongodb+srv://cheshtakharbanda27:cheshta1A@signupdb.1m9ou.mongodb.net/?retryWrites=true&w=majority&appName=signupDB" ).then(() => console.log('MongoDB connected'))
   .catch(err => console.error('MongoDB connection error:', err));
 
 const secretKey = process.env.SECRET_KEY || 'MySecretKey';

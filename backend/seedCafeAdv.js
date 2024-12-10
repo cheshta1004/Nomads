@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 import CafeAndAdv from './models/CafeAdv.js'; 
 
 const seedCafeAdv = async () => {
-  await mongoose.connect('mongodb://localhost:27017/signupDB', {
+  await mongoose.connect('mongodb+srv://cheshtakharbanda27:cheshta1A@signupdb.1m9ou.mongodb.net/?retryWrites=true&w=majority&appName=signupDB', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   });

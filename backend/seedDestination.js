@@ -30,7 +30,7 @@ const sampleDestinations = [
 const seedDestinations = async () => {
     try {
         // Connect to the MongoDB database
-        await mongoose.connect("mongodb://127.0.0.1:27017/signupDB", { useNewUrlParser: true, useUnifiedTopology: true });
+        await mongoose.connect("mongodb+srv://cheshtakharbanda27:cheshta1A@signupdb.1m9ou.mongodb.net/?retryWrites=true&w=majority&appName=signupDB", { useNewUrlParser: true, useUnifiedTopology: true });
 
         console.log('Connected to MongoDB');
 
@@ -38,7 +38,8 @@ const seedDestinations = async () => {
         await Destination.deleteMany();
 
         // Insert new destinations data
-        await Destination.insertMany(sampleDestinations);
+        const insertResult = await Destination.insertMany(sampleDestinations);
+        console.log(`Inserted ${insertResult.length} documents`);
 
         console.log('Destinations seeded successfully');
 

@@ -16,12 +16,12 @@ export const getHotelsById=async(req,res)=>{
   const {hotelId}=req.params;
   try{
     const hotelRecord=await hotel.findById(hotelId);
-    if (!userRecord) {
-      return res.status(404).json({ error: "User not found." });
+    if (!hotelRecord) {
+      return res.status(404).json({ error: "Hotel not found." });
     }
-    res.json({  userRecord });
+    res.json({  hotelRecord });
   }catch(error){
-    console.error("Error retrieving user:", error.message);
+    console.error("Error retrieving hotel:", error.message);
         res.status(500).json({ error: "Server error." });
   }
 }

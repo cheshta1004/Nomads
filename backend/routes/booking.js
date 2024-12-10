@@ -1,6 +1,5 @@
 import express from "express";
-import Booking from "../models/Booking.js"; // Your Booking schema/model
-
+import Booking from "../models/Booking.js"; 
 const router = express.Router();
 
 router.get("/bookings/user/:userId", async (req, res) => {

@@ -31,7 +31,7 @@
 
 .navigation {
     flex: 1;
-    margin-left: 40px; /* Space between logo and navigation */
+    margin :"10px"
 }
 
 .menu {
@@ -44,7 +44,7 @@
 }
 
 .nav__item {
-    margin-right: 20px;
+    margin-right: 5px;
 }
 
 .nav__item a {

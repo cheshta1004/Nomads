@@ -13,7 +13,8 @@ import bookingRoute from './routes/booking.js';
 import hotelRoute from './routes/hotels.js'
 import DestinationRoute from './routes/DestinationRoutes.js'
 import Payment from './models/Payment.js';
-import PaymentRoute from './routes/Payment.js'
+import CafeAdvRoute from './routes/CafeAdv.js';
+import PaymentCafeAdv from './models/PaymentCafeAdv.js';
 
 dotenv.config();
 const app = express();
@@ -34,6 +35,7 @@ app.use('/review', reviewRoute);
 app.use('/booking', bookingRoute);
 app.use('/api/hotels',hotelRoute);
 app.use('/api/destinations',DestinationRoute);
+app.use('/api/CafeAdv',CafeAdvRoute);
 app.get('/api/payment/:userId', async (req, res) => {
     const { userId } = req.params;
 
@@ -79,12 +81,53 @@ app.post('/api/payment', async(req, res) => {
       }
   });
   
+  app.get('/api/paymentCafeAdv/:userId', async (req, res) => {
+    const { userId } = req.params;
+
+    try {
+        const userRecord = await PaymentCafeAdv.find({ userId: userId });
+        if (!userRecord || userRecord.length === 0) {
+            return res.status(404).json({ error: "User not found or no payments found." });
+        }
+        res.json({ userRecord });
+    } catch (error) {
+        console.error("Error retrieving user payments:", error.message);
+        res.status(500).json({ error: "Server error." });
+    }
+});
+app.post('/api/paymentCafeAdv', async (req, res) => {
+    console.log(req.body);
+    try {
+        const {
+          paymentId,
+          userId,
+          CafeAdvId,
+          amount,
+          bookingDetails,
+        } = req.body;
+    
+        const newPaymentCafeAdv = new PaymentCafeAdv({
+          paymentId,
+          userId,
+          CafeAdvId,
+          amount,
+          bookingDetails,
+          status: "Success",  
+          createdAt: new Date(),
+        });
+    
+        await newPaymentCafeAdv.save();
+    
+        res.status(200).json({ success: true, message: "Payment saved successfully" });
+    } catch (error) {
+        console.error("Error saving payment:", error);
+        res.status(500).json({ success: false, message: "Failed to save payment" });
+    }
+});
 
 
-mongoose.connect("mongodb://127.0.0.1:27017/signupDB", {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-}).then(() => console.log('MongoDB connected'))
+
+mongoose.connect("mongodb://127.0.0.1:27017/signupDB" ).then(() => console.log('MongoDB connected'))
   .catch(err => console.error('MongoDB connection error:', err));
 
 const secretKey = process.env.SECRET_KEY || 'MySecretKey';

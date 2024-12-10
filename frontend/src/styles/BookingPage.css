@@ -1,8 +1,8 @@
 /* General Page Styling */
 .booking-page {
-    font-family: 'Poppins', sans-serif;
+    font-family:  sans-serif;
     color: #024D95;
-  
+  margin :100px 0px 0px 0px;
     /* background: url('../assets/images/gallery-03.jpg') no-repeat center center/cover; */
     background-size: cover;
     min-height: 100vh;

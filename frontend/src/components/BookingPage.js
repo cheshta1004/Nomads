@@ -1,63 +1,96 @@
-
 import React, { useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import '../styles/BookingPage.css';
 import { useUserContext } from "../context/userContext";
-import {  Button } from "reactstrap";
-import { useNavigate } from "react-router-dom";
+import { Button } from "reactstrap";
+
 const BookingPage = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const { item } = location.state || {}; // Retrieve passed data
-  const { username, setUsername } = useUserContext();
+  const { item } = location.state || {};
+  const { username } = useUserContext();
+
   const [formData, setFormData] = useState({
-    name: '',
-    date: '',
-    time: '',
+    name: "",
+    date: "",
+    time: "",
   });
+
   const today = new Date().toISOString().split("T")[0];
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const validateInputs = () => {
     if (!formData.name || !formData.date || !formData.time) {
-      alert('Please fill out all the fields before proceeding.');
+      alert("Please fill out all fields before proceeding.");
+      return false;
+    }
+    return true;
+  };
+
+  const handleSubmit = async () => {
+    if (!validateInputs()) return;
+
+    if (!window.Razorpay) {
+      alert("Razorpay SDK not loaded. Please try again.");
       return;
     }
 
-    // Call the payment gateway function after form submission
-    initiatePayment(item);
-  };
+    const totalAmount = item.price;
 
-  const initiatePayment = (item) => {
     const options = {
-      key: 'rzp_test_XTFM1u04BWkyBy', // Replace with your Razorpay key
-      amount: item.price * 100, // Price in paise
-      currency: 'INR',
-      name: 'Tour and Travel Booking',
-      description:` Payment for ${item.name}`,
-      image: 'https://your-logo-url.com/logo.png', // Replace with your logo URL
-      handler: (response) => {
-        alert(`🎉 Payment successful! Payment ID: ${response.razorpay_payment_id}`);
+      key: "rzp_test_XTFM1u04BWkyBy",
+      amount: totalAmount * 100,
+      currency: "INR",
+      name: "Cafe and Adventure Booking",
+      description: `Payment for ${item.name}`,
+      handler: async (response) => {
+        try {
+          const paymentDetails = {
+            paymentId: response.razorpay_payment_id,
+            userId: username._id,
+            CafeAdvId: item._id,
+            amount: totalAmount,
+            bookingDetails: {
+              fullName: formData.name,
+              date: formData.date,
+              time: formData.time,
+            },
+          };
+
+          const res = await fetch("http://localhost:5000/api/paymentCafeAdv", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(paymentDetails),
+          });
+
+          if (!res.ok) {
+            throw new Error("Failed to save payment details to the server.");
+          }
+
+          const data = await res.json();
+
+          if (data.success) {
+            navigate("/dashboard");
+          } else {
+            alert("Payment saved but failed to save to the database.");
+          }
+        } catch (error) {
+          alert("Payment successful but there was an error saving it.");
+        }
       },
       prefill: {
-        name: formData.name, // Use name from form
-        email: 'customer@example.com', // You can customize this
-        contact: '1234567890', // Add user contact if available
+        name: formData.name,
+        email: username?.email,
       },
-      notes: {
-        address: `Booking for ${item.name}`,
-      },
-      theme: {
-        color: '#F37254',
-      },
+      theme: { color: "#3399cc" },
     };
 
-    const rzp = new window.Razorpay(options);
-    rzp.open();
+    const razorpay = new window.Razorpay(options);
+    razorpay.open();
   };
 
   if (!item) {
@@ -66,15 +99,11 @@ const BookingPage = () => {
 
   return (
     <div className="booking-page">
-      <div className="hero-section"></div>
-
       <div className="booking-container">
         <div className="booking-form-card">
-          <h2>Book: {item.name}</h2>
+          <h2> {item.name}</h2>
           <img src={item.image} alt={item.name} className="item-image" />
-          <p>{item.description}</p>
-          <p className="item-price" >Price: ₹{item.price}</p>
-          <form onSubmit={handleSubmit}>
+          <form>
             <label>
               Your Name:
               <input
@@ -82,7 +111,6 @@ const BookingPage = () => {
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
-                placeholder="Enter your name"
                 required
               />
             </label>
@@ -108,19 +136,11 @@ const BookingPage = () => {
               />
             </label>
             <Button
-  type={username ? "submit" : "button"} // Dynamically set type
-  className="btn btn-primary submit-button"
-  style={{ background: "var(--secondary-color)" }}
-  onClick={() => {
-    if (!username) {
-      navigate("/login"); // Redirect to login page if not logged in
-    }
-  }}
->
-  {username ? "Confirm and Pay" : "Login to Book"}
-</Button>
-
-
+              type="button"
+              onClick={() => (!username ? navigate("/login") : handleSubmit())}
+            >
+              {username ? "Confirm and Pay" : "Login to Book"}
+            </Button>
           </form>
         </div>
       </div>
@@ -129,3 +149,4 @@ const BookingPage = () => {
 };
 
 export default BookingPage;
+

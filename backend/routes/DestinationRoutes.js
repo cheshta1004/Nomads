@@ -4,9 +4,7 @@ const router = express.Router();
 
 router.get('/', async (req, res) => {
     try {
-        
         const destinations = await Destination.find();
-
         res.json({ destinations });
     } catch (err) {
         res.status(500).json({ error: 'Failed to fetch destinations' });

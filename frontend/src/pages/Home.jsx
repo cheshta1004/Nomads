@@ -5,7 +5,6 @@ import heroVideo from "../assets/images/heroVideo.mp4"
 import experienceImg from "../assets/images/experience.png"
 import Subtitle from "./../shared/Subtitle";
 import SearchBar from "../shared/SearchBar";
-import ServiceList from "../services/ServiceList";
 import Collage from "../components/Image-gallery/Collage.jsx";
 import Testimonial from "../components/Testimonial/Testimonial.jsx";
 import Newsletter from "../shared/Newsletter.jsx";
@@ -31,7 +30,7 @@ const Home =()=>{
             </Row>
         </Container>
     </section>
-    <section>
+    {/* <section>
         <Container>
             <Row>
                 <Col lg='3'>
@@ -41,7 +40,7 @@ const Home =()=>{
                 <ServiceList/>
             </Row>
         </Container>
-    </section>
+    </section> */}
     <section>
         <Container>
             <Row>

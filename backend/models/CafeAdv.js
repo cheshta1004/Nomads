@@ -4,20 +4,20 @@ const cafeSchema = new mongoose.Schema({
   name: { type: String, required: true },
   description: { type: String, required: true },
   price: { type: Number, required: true },
-  image: { type: String, required: true }, // URL or file reference
+  image: { type: String, required: true }, 
 });
 
 const adventureSchema = new mongoose.Schema({
   name: { type: String, required: true },
   description: { type: String, required: true },
   price: { type: Number, required: true },
-  image: { type: String, required: true }, // URL or file reference
+  image: { type: String, required: true }, 
 });
 
 const CafeAdv = new mongoose.Schema({
   city: { type: String, required: true },
-  cafes: [cafeSchema], // Embedded array of cafes
-  adventures: [adventureSchema], // Embedded array of adventures
+  cafes: [cafeSchema], 
+  adventures: [adventureSchema], 
 });
 
 const CafeAndAdv = mongoose.model('CafeAndAdv', CafeAdv);

@@ -1,12 +1,12 @@
-import React, { useState ,useCallback, useContext} from "react";
+import React, { useState } from "react";
 import { Container, Row, Col, Form, FormGroup, Button } from 'reactstrap';
 import axios from 'axios';
 import "./login.css"
 import RegisterPhoto from "../assets/images/register.jpg"
 import RegisterTitle from "../assets/images/registerTitle.png"
 import { Link, useNavigate } from "react-router-dom";
-import {AuthContext} from './../context/AuthContext.js'
-import {BASE_URL} from './../utils/config.js';
+
+
 
 const Register = () => {
     const navigate = useNavigate();
@@ -15,7 +15,7 @@ const Register = () => {
         email: '',
         password: ''
     });
-    const {dispatch}=useContext(AuthContext)
+   
     const [emailError, setEmailError] = useState('');
 
     const handleChange = e => {
@@ -36,6 +36,7 @@ const Register = () => {
         setEmailError('');
         try {
             const response = await axios.post('http://localhost:5000/register', credentials);
+            console.log(response);
             alert("Registration successful");
             navigate("/login");
         } catch (error) {
@@ -44,38 +45,6 @@ const Register = () => {
         }
     };
     
-    // const handleClick = async (e) => {
-    //     e.preventDefault();
-      
-    //     // const userData = {
-    //     //   username: 'exampleUser', // Example data, replace with actual input values
-    //     //   password: 'examplePassword',
-    //     //   email: 'example@example.com'
-    //     // };
-      
-    //     try {
-    //       const res = await fetch(`${BASE_URL}/auth/register`, {
-    //         method: 'POST',
-    //         headers: {
-    //           'content-Type': 'application/json',
-    //         },
-    //         body: JSON.stringify(credentials), // Send user data in the request body
-    //       });
-    //       const result=await res.json();
-    //       // Check if the response is ok
-    //       if (!res.ok) {
-    //         alert(result.message)
-    //       }
-    //       dispatch({type:'ReGISTER_SUCCESS'})
-    //       navigate('/login')
-    //     //   const data = await res.json();
-    //     //   console.log("Registration successful", data);
-          
-    //     } catch (error) {
-    //       alert(error.message);
-    //     }
-    //   };
-      
     return (
         <Container className="login-container">
             <Row>

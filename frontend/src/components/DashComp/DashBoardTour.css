@@ -7,8 +7,8 @@
   background-color: #ffffff;
   transition: transform 0.3s, box-shadow 0.3s;
   overflow: hidden;
-  margin: 0 auto; /* Center the card if displayed as standalone */
   width: fit-content; /* Card width adjusts to content */
+  margin:20px; /* Add some space between cards horizontally */
 }
 
 .booking-card:hover {
@@ -50,8 +50,11 @@
 }
 
 /* Add spacing between cards if multiple cards are displayed in a container */
-.cards-container .booking-card {
-  margin: 10px auto; /* Center cards in the container */
+.cards-container {
+  display: flex;
+  flex-wrap: wrap; /* Allows cards to wrap into the next line if they overflow */
+  gap: 20px; /* Spacing between cards */
+  justify-content: flex-start; /* Align cards to the left */
 }
 
 /* Responsive Design */
@@ -70,6 +73,11 @@
 
   .booking-card .card-text {
     font-size: 0.9rem;
+  }
+
+  /* Optional: Adjust container layout for smaller screens */
+  .cards-container {
+    justify-content: flex-start; /* Ensure cards stay aligned to the left */
   }
 }
 

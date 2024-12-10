@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef, useEffect } from "react";
 import { Container, Row, Button } from 'reactstrap';
 import { NavLink, Link } from 'react-router-dom';
 import logo from "../../assets/images/logo.png";
@@ -10,7 +10,8 @@ const nav__links = [
     { path: '/destinations', display: "Destinations" }, 
     {path:'/placesList',display:"Places List"},
     {path:'/DashBoard',display:"Dash Board"},
-    {path:'/Contact', display:"Contact Us"}
+    {path:'/Contact', display:"Contact Us"},
+    {path:'/Blogs',display:"Blogs"}
 ];
 
 const Header = () => {

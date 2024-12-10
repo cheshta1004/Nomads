@@ -2,11 +2,11 @@ services:
   - type: web
     name: backend
     env: node
-    buildCommand: "npm install"
-    startCommand: "npm start"
+    buildCommand: "cd backend && npm install"        # Install dependencies inside the backend folder
+    startCommand: "cd backend && npm start"          # Run the start command inside the backend folder
     plan: free
     envVars:
       - key: NODE_ENV
         value: production
       - key: REACT_APP_API_URL
-        value: https://your-backend.onrender.com
+        value: https://your-backend.onrender.com    # This should work if React frontend uses it

@@ -18,7 +18,7 @@ import PaymentCafeAdv from './models/PaymentCafeAdv.js';
 
 dotenv.config();
 const app = express();
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 10000;
 
 const corsOptions = {
     origin: true,

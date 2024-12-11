@@ -36,6 +36,7 @@ const Destinations = () => {
 
     return (
         <Container>
+            // eslint-disable-next-line
             <h1 className="destinations-title text-center"></h1>
             <SearchBar/>
             <Row>
